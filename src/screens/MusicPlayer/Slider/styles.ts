@@ -9,9 +9,7 @@ export const Container = styled.View`
 export const MusicTime = styled.View`
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 100px;
   width: 80%;
-
 `;
 
 export const Times = styled.Text`

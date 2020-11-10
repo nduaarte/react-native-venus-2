@@ -1,12 +1,20 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Image } from 'react-native';
 
-import { Container } from './styles';
+import imageMusicPic from '../../../images/mushroom.jpeg';
+import { Container, MusicPic, InfoContainer, Title, Artist } from './styles';
 
 const MusicInfo: React.FC = () => {
+  const musicName = "Cogulândia";
+  const artistName = "Matuê";
+
   return(
     <Container>
-      
+      <MusicPic source={imageMusicPic} />
+      <InfoContainer>
+        <Title>{musicName}</Title>
+        <Artist>{artistName}</Artist>
+      </InfoContainer>
     </Container>
   );
 }
