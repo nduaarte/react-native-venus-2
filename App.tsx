@@ -1,9 +1,9 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-import Routes from './Routes';
+import Routes from './src/Routes';
 
-const App: React.FC = () => {
+function App() {
   return <Routes />
 }
 

@@ -1,10 +1,17 @@
 import React from 'react';
 import { View } from 'react-native';
+import theme from '../../Theme';
+
+import MusicInfo from './MusicInfo';
+import Slider from './Slider';
+import SoundManagement from './SoundManagement';
 
 const MusicPlayer: React.FC = () => {
   return(
-    <View>
-      
+    <View style={{flex: 1, backgroundColor: theme.grey}}>
+      <MusicInfo />
+      <Slider />
+      <SoundManagement /> 
     </View>
   );
 }
