@@ -5,7 +5,6 @@ import theme from '../../../Theme';
 export const Container = styled.View`
   align-items: center;
   justify-content: center;
-  margin-top: 120px;
 `;
 
 export const MusicPic = styled.Image`
