@@ -1,7 +1,5 @@
 import styled from 'styled-components/native';
 
-import theme from '../../../Theme';
-
 export const Container = styled.View`
   align-items: center;
   justify-content: center;
@@ -19,7 +17,7 @@ export const InfoContainer = styled.View`
 `;
 
 export const Title = styled.Text`
-  color: ${theme.white};
+  color: ${props => props.theme.colors};
   font-size: 25px;
   font-weight: 600;
 `;
