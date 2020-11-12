@@ -2,7 +2,7 @@
 <p align='center'>Music Player offline</p>
 
 <h3>Tecnologias usadas:</h3>
-- Expo
+- Expo AV
 - React Native
 - TypeScript
 - Redux

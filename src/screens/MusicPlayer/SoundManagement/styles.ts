@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler'
 
 import theme from '../../../Theme';
+import { Pressable } from 'react-native';
 
 export const Container = styled.View`
   flex-direction: row;
@@ -11,7 +12,7 @@ export const Container = styled.View`
   padding: 20px 0;
 `;
 
-export const Button = styled.TouchableOpacity`
+export const Button = styled(Pressable)`
   background-color: ${theme.grey};
 
   padding: 15px 25px;
