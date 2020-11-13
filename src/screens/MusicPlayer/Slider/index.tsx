@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Text } from 'react-native';
 import Sliderr from '@react-native-community/slider';
-import theme from '../../../Theme';
+import { ThemeContext } from 'styled-components';
 
 import { Container, MusicTime, Times } from './styles';
 
 const Slider: React.FC = () => {
+  const { main, lighter, white } = useContext(ThemeContext);
   // Redux
   const minValue = 0;
   const maxValue = 100;
@@ -23,9 +24,9 @@ const Slider: React.FC = () => {
         style={{width: '85%'}}
         minimumValue={minValue}
         maximumValue={maxValue}
-        minimumTrackTintColor={theme.ruby}
-        maximumTrackTintColor={theme.lighter}
-        thumbTintColor={theme.white}
+        minimumTrackTintColor={main}
+        maximumTrackTintColor={lighter}
+        thumbTintColor={white}
       />
     </Container>
   );

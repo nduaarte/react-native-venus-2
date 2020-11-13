@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { ThemeContext } from 'styled-components';
 
-import theme from '../../../Theme';
 import imageMusicPic from '../../../images/mushroom.jpeg';
 import { Container, Title, Sound, MusicPic, InfoContainer, Music, Artist, AddSound } from './styles';
 
 const Sounds: React.FC = () => {
+  const { main } = useContext(ThemeContext);
+
   const musicName = "Cogulândia";
   const artistName = "Matuê";
 
@@ -22,7 +24,7 @@ const Sounds: React.FC = () => {
         </InfoContainer>
 
         <AddSound>
-          <MaterialCommunityIcons name="playlist-music" size={33} color={theme.ruby} />
+          <MaterialCommunityIcons name="playlist-music" size={33} color={main} />
         </AddSound>
       </Sound>
     </Container>

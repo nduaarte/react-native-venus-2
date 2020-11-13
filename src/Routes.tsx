@@ -1,22 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { ThemeContext } from 'styled-components';
+
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-import theme from './Theme';
 import MusicPlayer from './screens/MusicPlayer';
 import SoundList from './screens/SoundList';
 
 function Routes() {
   const { Navigator, Screen } = createBottomTabNavigator();
+  const { main, dark, light } = useContext(ThemeContext);
 
   return(
     <NavigationContainer>
       <Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ color, size }) => {
-            let iconName;
+            let iconName: string;
 
             if (route.name === 'Música') {
               iconName = 'music'
@@ -28,10 +30,10 @@ function Routes() {
           },
         })}
         tabBarOptions={{
-          activeTintColor: theme.ruby,
+          activeTintColor: main,
           style: {
-            backgroundColor: theme.dark,
-            borderTopColor: theme.light
+            backgroundColor: dark,
+            borderTopColor: light
           }
         }}
         >

@@ -1,12 +1,14 @@
-import React from 'react';
+import React,{ useContext } from 'react';
 import { View } from 'react-native';
+import { ThemeContext } from 'styled-components';
 
-import theme from '../../Theme';
 import Sounds from './Sounds';
 
 const SoundList: React.FC = () => {
+  const { grey } = useContext(ThemeContext);
+
   return(
-    <View style={{flex: 1, backgroundColor: theme.grey}}>
+    <View style={{flex: 1, backgroundColor: grey}}>
       <Sounds />
     </View>
   );

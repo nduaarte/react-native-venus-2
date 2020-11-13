@@ -9,7 +9,4 @@
     "resolveJsonModule": true,
     "strict": true
   },
-  "files": [
-    "src/types.d.ts"
-  ]
 }

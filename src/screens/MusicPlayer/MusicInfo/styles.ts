@@ -17,13 +17,13 @@ export const InfoContainer = styled.View`
 `;
 
 export const Title = styled.Text`
-  color: ${props => props.theme.colors};
+  color: ${({ theme }) => theme.white};
   font-size: 25px;
   font-weight: 600;
 `;
 
 export const Artist= styled.Text`
-  color: ${theme.darkWhite};
+  color: ${({ theme }) => theme.darkWhite};
   font-size: 18px;
   font-weight: 600;
 `;

@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import theme from '../../../Theme';
 
 export const Container = styled.View`
   margin: 20px 8px;
@@ -13,7 +12,7 @@ export const Sound = styled.View`
 export const Title = styled.Text`
   font-size: 32px;
   margin: 20px 0;
-  color: ${theme.white};
+  color: ${({ theme }) => theme.white};
   align-self: center;
 `;
 
@@ -27,13 +26,13 @@ export const InfoContainer = styled.View`
 `;
 
 export const Music = styled.Text`
-  color: ${theme.white};
+  color: ${({ theme }) => theme.white};
   font-size: 18px;
   font-weight: 600;
 `;
 
 export const Artist = styled.Text`
-  color: ${theme.darkWhite};
+  color: ${({ theme }) => theme.darkWhite};
   font-weight: 600;
 `;
 

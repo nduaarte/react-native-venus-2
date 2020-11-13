@@ -1,13 +1,13 @@
 export interface RootState {
   ThemeReducer: any;
-  currentTheme: object;
+  currentTheme: string;
 }
 
 const INITIAL_STATE = {
-  currentTheme: ''
+  currentTheme: 'venus'
 }
 
-export default function ThemeReducer(state = INITIAL_STATE, action: { type: any, value: object}) {
+export default function ThemeReducer(state = INITIAL_STATE, action: { type: any, value: string}) {
   switch(action.type) {
     case 'UPDATE_THEME': 
       return { ...state, currentTheme: action.value }
@@ -16,6 +16,6 @@ export default function ThemeReducer(state = INITIAL_STATE, action: { type: any,
   }
 }
 
-export function actionUpdateTheme(value: object) {
+export function actionUpdateTheme(value: string) {
   return { type: 'UPDATE_THEME', value };
 };

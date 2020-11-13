@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import theme from '../../../Theme';
 
 export const Container = styled.View`
   margin: 40px 20px 30px;
@@ -13,17 +12,16 @@ export const ModalContainer = styled.View`
 `;
 
 export const ModalSquare = styled.View`
-  background-color: ${theme.grey};
+  background-color: ${({ theme }) => theme.grey};
   border-radius: 20px;
   padding: 50px 30px;
-  box-shadow: 0px 0px 4px ${theme.ruby};
-
+  box-shadow: 0px 0px 4px ${({ theme }) => theme.main};
 `;
 
 export const Title = styled.Text`
   font-size: 24px;
   font-weight: bold;
-  color: ${theme.white};
+  color: ${({ theme }) => theme.white};
   margin-bottom: 35px;
 `;
 
@@ -36,7 +34,7 @@ export const ButtonThemeContainer = styled.TouchableOpacity`
 export const ThemeName = styled.Text`
   font-size: 18px;
   font-weight: bold;
-  color: ${theme.darkWhite};
+  color: ${({ theme }) => theme.darkWhite};
   margin: 0 3px;
 `;
 

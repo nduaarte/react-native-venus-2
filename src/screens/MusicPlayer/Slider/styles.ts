@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import theme from '../../../Theme';
 
 export const Container = styled.View`
   justify-content: center;
@@ -15,5 +14,5 @@ export const MusicTime = styled.View`
 export const Times = styled.Text`
   font-size: 13px;
   font-weight: bold;
-  color: ${theme.lighter};
+  color: ${({ theme }) => theme.lighter};;
 `;
