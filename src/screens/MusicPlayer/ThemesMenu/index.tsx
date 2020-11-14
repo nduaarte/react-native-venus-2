@@ -1,11 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { Modal } from 'react-native';
 import { useDispatch } from 'react-redux';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, Octicons } from '@expo/vector-icons';
 import { ThemeContext } from 'styled-components';
-
-import { FontAwesome5 } from '@expo/vector-icons';
-import { Octicons } from '@expo/vector-icons';
 
 import { Container, ModalContainer, ModalSquare, Title, ButtonThemeContainer, ThemeName, Button } from './styles';
 
@@ -35,13 +32,13 @@ const ThemesMenu: React.FC = () => {
           </ButtonThemeContainer>
 
           <ButtonThemeContainer onPress={() => dispatchTheme('ruby')}>
-            <MaterialCommunityIcons name="diamond" size={40} color='#8a2548' />
+            <MaterialCommunityIcons name="ruby" size={37} color='#8a2548' />
             <ThemeName>Ruby</ThemeName>
           </ButtonThemeContainer>
 
-          <ButtonThemeContainer onPress={() => dispatchTheme('nebula')}>
-            <FontAwesome5 name="squarespace" size={36} color='#893595' />
-            <ThemeName>Nebula</ThemeName>
+          <ButtonThemeContainer onPress={() => dispatchTheme('emerald')}>
+            <MaterialCommunityIcons name="diamond-stone" size={40} color='#296328' />
+            <ThemeName>Esmeralda</ThemeName>
           </ButtonThemeContainer>
         </ModalSquare>
       </ModalContainer>

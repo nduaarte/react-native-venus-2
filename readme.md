@@ -7,3 +7,4 @@
 - TypeScript
 - Redux
 - Styled Components
+- AsyncStorage

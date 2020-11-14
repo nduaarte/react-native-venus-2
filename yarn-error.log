@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @types/react-native-community/slider -D
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @types/expo-av
 
 PATH: 
   C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Android\Android Studio\bin;C:\Users\Nycollas\AppData\Local\hyper\app-3.0.2\resources\bin;C:\Users\Nycollas\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Nycollas\AppData\Local\Yarn\bin;C:\Users\Nycollas\AppData\Roaming\npm;C:\Program Files\MySQL\MySQL Server 8.0\bin
@@ -14,8 +14,8 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2freact-native-community/slider: Request "https://registry.yarnpkg.com/@types%2freact-native-community/slider" returned a 405
-      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66105:18)
+  Error: https://registry.yarnpkg.com/@types%2fexpo-av: Not found
+      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66096:18)
       at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140748:22)
       at Request.emit (events.js:315:20)
       at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141720:10)
@@ -38,10 +38,13 @@ npm manifest:
     },
     "dependencies": {
       "@react-native-community/masked-view": "0.1.10",
+      "@react-native-community/slider": "^3.0.3",
       "@react-navigation/bottom-tabs": "^5.10.7",
       "@react-navigation/native": "^5.8.7",
       "expo": "~39.0.2",
+      "expo-av": "^8.6.0",
       "expo-status-bar": "~1.0.2",
+      "moment": "^2.29.1",
       "react": "16.13.1",
       "react-dom": "16.13.1",
       "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.4.tar.gz",
@@ -59,6 +62,7 @@ npm manifest:
       "@types/react": "~16.9.35",
       "@types/react-dom": "~16.9.8",
       "@types/react-native": "~0.63.2",
+      "@types/react-redux": "^7.1.11",
       "@types/styled-components": "^5.1.4",
       "typescript": "~3.9.5"
     },
@@ -1352,6 +1356,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.10.tgz#5dda643e19e587793bc2034dd9bf7398ad43d401"
     integrity sha512-rk4sWFsmtOw8oyx8SD3KSvawwaK7gRBSEIy2TAwURyGt+3TizssXP1r8nx3zY+R7v2vYYHXZ+k2/GULAT/bcaQ==
   
+  "@react-native-community/slider@^3.0.3":
+    version "3.0.3"
+    resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-3.0.3.tgz#830167fd757ba70ac638747ba3169b2dbae60330"
+    integrity sha512-8IeHfDwJ9/CTUwFs6x90VlobV3BfuPgNLjTgC6dRZovfCWigaZwVNIFFJnHBakK3pW2xErAPwhdvNR4JeNoYbw==
+  
   "@react-navigation/bottom-tabs@^5.10.7":
     version "5.10.7"
     resolved "https://registry.yarnpkg.com/@react-navigation/bottom-tabs/-/bottom-tabs-5.10.7.tgz#a677a27404a0a8e006ce059588b4804fcae21e89"
@@ -1392,7 +1401,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@types/hammerjs/-/hammerjs-2.0.36.tgz#17ce0a235e9ffbcdcdf5095646b374c2bf615a4c"
     integrity sha512-7TUK/k2/QGpEAv/BCwSHlYu3NXZhQ9ZwBYpzr9tjlPIL2C5BeGhH3DmVavRx3ZNyELX5TLC91JTz/cen6AAtIQ==
   
-  "@types/hoist-non-react-statics@*":
+  "@types/hoist-non-react-statics@*", "@types/hoist-non-react-statics@^3.3.0":
     version "3.3.1"
     resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
     integrity sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==
@@ -1438,6 +1447,16 @@ Lockfile:
     integrity sha512-bqRtJI4EwiV3OTc9pHjmtE/ZIOLYi9KbrnMWyJIb90Z7+eXKPimKPTBU1oDVNdw8CXkDCrZaengvvdu2JMvjtg==
     dependencies:
       "@types/react" "*"
+  
+  "@types/react-redux@^7.1.11":
+    version "7.1.11"
+    resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-7.1.11.tgz#a18e8ab3651e8e8cc94798934927937c66021217"
+    integrity sha512-OjaFlmqy0CRbYKBoaWF84dub3impqnLJUrz4u8PRjDzaa4n1A2cVmjMV81shwXyAD5x767efhA8STFGJz/r1Zg==
+    dependencies:
+      "@types/hoist-non-react-statics" "^3.3.0"
+      "@types/react" "*"
+      hoist-non-react-statics "^3.3.0"
+      redux "^4.0.0"
   
   "@types/react@*", "@types/react@~16.9.35":
     version "16.9.56"
@@ -2643,6 +2662,14 @@ Lockfile:
       md5-file "^3.2.3"
       path-browserify "^1.0.0"
       url-parse "^1.4.4"
+  
+  expo-av@^8.6.0:
+    version "8.6.0"
+    resolved "https://registry.yarnpkg.com/expo-av/-/expo-av-8.6.0.tgz#ab434c05241c1dcdca0edd57acb03aa21a3e46cc"
+    integrity sha512-ZZJtCLCDigeDMu2fyv76Kyifu2quhTn6ViYjM2ku/HvFSvUxlb5kK9imuLog3kR+LRxeIiVS9F29r3PCOqI+rQ==
+    dependencies:
+      lodash "^4.17.15"
+      nullthrows "^1.1.0"
   
   expo-constants@~9.2.0:
     version "9.2.0"
@@ -4258,6 +4285,11 @@ Lockfile:
     dependencies:
       minimist "^1.2.5"
   
+  moment@^2.29.1:
+    version "2.29.1"
+    resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
+    integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
+  
   ms@2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -4905,7 +4937,7 @@ Lockfile:
       string_decoder "~1.1.1"
       util-deprecate "~1.0.1"
   
-  redux@^4.0.5:
+  redux@^4.0.0, redux@^4.0.5:
     version "4.0.5"
     resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.5.tgz#4db5de5816e17891de8a80c424232d06f051d93f"
     integrity sha512-VSz1uMAH24DM6MF72vcojpYPtrTUu3ByVWfPL1nPfVRb5mZVTve5GnNCUV53QM/BZ66xfWrm0CTWoM+Xlz8V1w==

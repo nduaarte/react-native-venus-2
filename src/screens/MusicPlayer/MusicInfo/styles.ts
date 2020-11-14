@@ -16,8 +16,8 @@ export const InfoContainer = styled.View`
   margin: 8px 0;
 `;
 
-export const Title = styled.Text`
-  color: ${({ theme }) => theme.white};
+export const Music = styled.Text`
+  color: ${({ theme }) => theme.main};
   font-size: 25px;
   font-weight: 600;
 `;

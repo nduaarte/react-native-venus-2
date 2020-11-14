@@ -9,6 +9,7 @@ export const MusicTime = styled.View`
   flex-direction: row;
   justify-content: space-between;
   width: 80%;
+  margin: 5px 0;
 `;
 
 export const Times = styled.Text`

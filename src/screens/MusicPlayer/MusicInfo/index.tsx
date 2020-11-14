@@ -2,7 +2,7 @@ import React from 'react';
 import { Image } from 'react-native';
 
 import imageMusicPic from '../../../images/mushroom.jpeg';
-import { Container, MusicPic, InfoContainer, Title, Artist } from './styles';
+import { Container, MusicPic, InfoContainer, Music, Artist } from './styles';
 
 const MusicInfo: React.FC = () => {
   const musicName = "Cogulândia";
@@ -12,7 +12,7 @@ const MusicInfo: React.FC = () => {
     <Container>
       <MusicPic source={imageMusicPic} />
       <InfoContainer>
-        <Title>{musicName}</Title>
+        <Music>{musicName}</Music>
         <Artist>{artistName}</Artist>
       </InfoContainer>
     </Container>

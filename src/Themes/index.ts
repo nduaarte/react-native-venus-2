@@ -12,13 +12,13 @@ declare module 'styled-components' {
   }
 }
 
-export const nebula: DefaultTheme = {
+export const emerald: DefaultTheme = {
   lighter: '#3F3F3F',
   light: '#333333',
   grey: '#1f2121',
   dark: '#1A1A1A',
   white: '#F5F5F5',
-  main: '#893595',
+  main: '#296328',
   darkWhite: '#8a8a8a'
 }
 
