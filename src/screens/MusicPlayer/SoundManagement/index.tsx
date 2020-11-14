@@ -13,7 +13,6 @@ const SoundManagement: React.FC = () => {
   const [isPlay, setIsPlay] = useState(false);
   const currentSound = useRef(new Audio.Sound());
   const dispatch = useDispatch();
-  let currentDuration: number;
 
   useEffect(() => {
     loadSound();
@@ -21,7 +20,7 @@ const SoundManagement: React.FC = () => {
     const interval = setInterval(() => {
       dispatchCurrentTime();
       return () => clearInterval(interval);
-    }, 1000)
+    }, 100)
   }, []);
 
   async function dispatchCurrentTime() {

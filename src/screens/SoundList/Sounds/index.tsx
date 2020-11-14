@@ -1,32 +1,49 @@
-import React, { useContext } from 'react';
-import { View } from 'react-native';
+import React, { useContext, useState } from 'react';
+import { FlatList } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { ThemeContext } from 'styled-components';
 
-import imageMusicPic from '../../../images/mushroom.jpeg';
-import { Container, Title, Sound, MusicPic, InfoContainer, Music, Artist, AddSound } from './styles';
+import mushroom from '../../../images/mushroom.jpeg';
+import data from '../../../data';
+import { 
+  Container, 
+  TitleContainer, 
+  Title, Sound, 
+  MusicPic, 
+  InfoContainer, 
+  Music, 
+  Artist, 
+  AddSound 
+} from './styles';
 
 const Sounds: React.FC = () => {
-  const { main } = useContext(ThemeContext);
+  const { main, lighter } = useContext(ThemeContext);
+  const [hasSelect, setHasSelect] = useState(false);
 
-  const musicName = "Cogulândia";
-  const artistName = "Matuê";
-
-  return(
+  return (
     <Container>
-      <Title>Biblioteca</Title>
+      <TitleContainer>
+        <Title>Biblioteca</Title>
+      </TitleContainer>
 
-      <Sound>
-        <MusicPic  source={imageMusicPic}/>
-        <InfoContainer>
-          <Music>{musicName}</Music>
-          <Artist>{artistName}</Artist>
-        </InfoContainer>
+      <FlatList
+        data={data}
+        keyExtractor={item => item.id}
+        renderItem={({ item }) => (
+        <Sound key={item.id} activeOpacity={0.7}>
+          <MusicPic source={mushroom} />
 
-        <AddSound>
-          <MaterialCommunityIcons name="playlist-music" size={33} color={main} />
-        </AddSound>
-      </Sound>
+          <InfoContainer>
+            <Music>{item.music}</Music>
+            <Artist>{item.artist}</Artist>
+          </InfoContainer>
+    
+          <AddSound onPress={() => setHasSelect(true)}>
+            <MaterialCommunityIcons name="library-plus" size={28} color={hasSelect ? main : lighter} />
+          </AddSound>
+        </Sound>
+        )}
+      />
     </Container>
   );
 }
