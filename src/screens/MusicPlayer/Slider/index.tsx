@@ -14,7 +14,7 @@ const Slider: React.FC = () => {
   const [musicTotalTime, setMusicTotalTime] = useState('');
   const [musicCurrentTime, setMusicCurrentTime] = useState('');
 
-  const { main, light, dark } = useContext(ThemeContext);
+  const { main, light } = useContext(ThemeContext);
   const barCurrentValue = ((currentDurationMS * 100) / totalDurationMS) / 100;
 
   useEffect(() => {

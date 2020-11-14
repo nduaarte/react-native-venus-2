@@ -9,6 +9,7 @@ export const MusicPic = styled.Image`
   width: 250px;
   height: 250px;
   border-radius: 8px;
+  margin-top: 25px;
 `;
 
 export const InfoContainer = styled.View`
