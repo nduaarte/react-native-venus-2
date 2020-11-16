@@ -8,10 +8,10 @@ import Slider from './Slider';
 import SoundManagement from './SoundManagement';
 
 const MusicPlayer: React.FC = () => {
-  const { grey } = useContext(ThemeContext); 
+  const { dark } = useContext(ThemeContext); 
 
   return(
-    <View style={{flex: 1, backgroundColor: grey}}>
+    <View style={{flex: 1, backgroundColor: dark}}>
       <ThemesMenu />
       <MusicInfo />
       <Slider />

@@ -11,7 +11,7 @@ import SoundList from './screens/SoundList';
 
 function Routes() {
   const { Navigator, Screen } = createBottomTabNavigator();
-  const { main, dark, light } = useContext(ThemeContext);
+  const { main, grey, light } = useContext(ThemeContext);
 
   return(
     <NavigationContainer>
@@ -32,7 +32,7 @@ function Routes() {
         tabBarOptions={{
           activeTintColor: main,
           style: {
-            backgroundColor: dark,
+            backgroundColor: grey,
             borderTopColor: light
           }
         }}

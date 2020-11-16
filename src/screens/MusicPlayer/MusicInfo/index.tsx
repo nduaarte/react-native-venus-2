@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image } from 'react-native';
 
-import imageMusicPic from '../../../images/mushroom.jpeg';
+import imageMusicPic from '../../../images/musics/cogulandia.jpeg';
 import { Container, MusicPic, InfoContainer, Music, Artist } from './styles';
 
 const MusicInfo: React.FC = () => {

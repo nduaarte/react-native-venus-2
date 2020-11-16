@@ -33,7 +33,7 @@ const Slider: React.FC = () => {
         progress={barCurrentValue}
         width={300}
         height={5}
-        borderWidth={3}
+        borderWidth={2}
         borderRadius={15}
         borderColor={light}
         color={main}

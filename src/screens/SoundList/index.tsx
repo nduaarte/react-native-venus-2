@@ -5,10 +5,10 @@ import { ThemeContext } from 'styled-components';
 import Sounds from './Sounds';
 
 const SoundList: React.FC = () => {
-  const { grey } = useContext(ThemeContext);
+  const { dark } = useContext(ThemeContext);
 
   return(
-    <View style={{flex: 1, backgroundColor: grey}}>
+    <View style={{flex: 1, backgroundColor: dark}}>
       <Sounds />
     </View>
   );
