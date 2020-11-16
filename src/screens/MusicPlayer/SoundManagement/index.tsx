@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef, useContext } from 'react';
 import { Audio } from 'expo-av';
-import { useDispatch } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { ThemeContext } from 'styled-components';
 
+import {  RootState } from '../../../redux/reducers/MusicReducer';
 import { Container, Button } from './styles';
 
 
@@ -13,6 +13,8 @@ const SoundManagement: React.FC = () => {
   const [isPlay, setIsPlay] = useState(false);
   const currentSound = useRef(new Audio.Sound());
   const dispatch = useDispatch();
+
+  const musicLink = useSelector((state: RootState) => state.MusicReducer.musicLink);
 
   useEffect(() => {
     loadSound();
@@ -23,6 +25,14 @@ const SoundManagement: React.FC = () => {
     }, 100)
   }, []);
 
+  async function loadSound() {
+    try {
+      await currentSound.current.loadAsync(musicLink);
+    } catch (err) {
+      console.log(`Erro ao carregar a música \n ${err}`);
+    }
+  }
+
   async function dispatchCurrentTime() {
     try {
       const play = await currentSound.current.getStatusAsync();
@@ -30,14 +40,6 @@ const SoundManagement: React.FC = () => {
       dispatch({ type: 'UPDATE_CURRENT_DURATION', value: play.positionMillis });
     } catch (err) {
       console.log('Erro ao buscar informações da música');
-    }
-  }
-
-  async function loadSound() {
-    try {
-      await currentSound.current.loadAsync(require('../../../sounds/cogulandia.mp3'));
-    } catch (err) {
-      console.log(`Erro ao carregar a música \n ${err}`);
     }
   }
 

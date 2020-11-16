@@ -1,5 +1,7 @@
 export interface RootState {
   MusicReducer: any;
+  musicId: number;
+  musicLink: any;
   musicName: string;
   artistName: string;
   totalDuration: number;
@@ -7,6 +9,8 @@ export interface RootState {
 }
 
 const INITIAL_STATE = {
+  musicId: 0,
+  musicLink: require('../../sounds/cogulandia.mp3'),
   musicName: '',
   artistName: '',
   totalDuration: 100,
@@ -15,6 +19,10 @@ const INITIAL_STATE = {
 
 export default function MusicReducer(state = INITIAL_STATE, action: { type: any; value: any }) {
   switch (action.type) {
+    case 'UPDATE_MUSIC_ID':
+      return { ...state, musicId: action.value }
+    case 'UPDATE_MUSIC_LINK':
+      return { ...state, musicLink: action.value }
     case 'UPDATE_MUSIC_NAME':
       return { ...state, musicName: action.value }
     case 'UPDATE_ARTIST_NAME':
@@ -26,6 +34,14 @@ export default function MusicReducer(state = INITIAL_STATE, action: { type: any;
     default:
       return state;
   }
+}
+
+export function actionUpdateMusicId(value: number) {
+  return { type: 'UPDATE_MUSIC_ID', value };
+};
+
+export function actionUpdateMusicLink(value: any) {
+  return { type: 'UPDATE_MUSIC_LINK', value};
 }
 
 export function actionUpdateMusicName(value: string) {
