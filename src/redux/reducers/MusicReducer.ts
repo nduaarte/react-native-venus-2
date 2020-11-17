@@ -1,7 +1,8 @@
 export interface RootState {
   MusicReducer: any;
-  musicId: number;
+  musicId: string;
   musicLink: any;
+  musicImage: any;
   musicName: string;
   artistName: string;
   totalDuration: number;
@@ -9,10 +10,11 @@ export interface RootState {
 }
 
 const INITIAL_STATE = {
-  musicId: 0,
+  musicId: '1',
   musicLink: require('../../sounds/cogulandia.mp3'),
-  musicName: '',
-  artistName: '',
+  musicImage: require('../../images/musics/cogulandia.jpeg'),
+  musicName: 'Cogulândia',
+  artistName: 'Matuê',
   totalDuration: 100,
   currentDuration: 0
 }
@@ -23,6 +25,8 @@ export default function MusicReducer(state = INITIAL_STATE, action: { type: any;
       return { ...state, musicId: action.value }
     case 'UPDATE_MUSIC_LINK':
       return { ...state, musicLink: action.value }
+    case 'UPDATE_MUSIC_IMAGE':
+      return { ...state, musicImage: action.value }
     case 'UPDATE_MUSIC_NAME':
       return { ...state, musicName: action.value }
     case 'UPDATE_ARTIST_NAME':
@@ -36,12 +40,16 @@ export default function MusicReducer(state = INITIAL_STATE, action: { type: any;
   }
 }
 
-export function actionUpdateMusicId(value: number) {
+export function actionUpdateMusicId(value: string) {
   return { type: 'UPDATE_MUSIC_ID', value };
 };
 
 export function actionUpdateMusicLink(value: any) {
-  return { type: 'UPDATE_MUSIC_LINK', value};
+  return { type: 'UPDATE_MUSIC_LINK', value };
+}
+
+export function actionUpdateMusicImage(value: any) {
+  return { type: 'UPDATE_MUSIC_IMAGE', value };
 }
 
 export function actionUpdateMusicName(value: string) {

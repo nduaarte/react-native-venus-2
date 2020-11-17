@@ -1,16 +1,17 @@
 import React from 'react';
-import { Image } from 'react-native';
+import { useSelector } from 'react-redux'
 
-import imageMusicPic from '../../../images/musics/cogulandia.jpeg';
+import { RootState } from '../../../redux/reducers/MusicReducer';
 import { Container, MusicPic, InfoContainer, Music, Artist } from './styles';
 
 const MusicInfo: React.FC = () => {
-  const musicName = "Cogulândia";
-  const artistName = "Matuê";
+  const musicName = useSelector((state: RootState) => state.MusicReducer.musicName);
+  const artistName = useSelector((state: RootState) => state.MusicReducer.artistName);
+  const musicImage = useSelector((state: RootState) => state.MusicReducer.musicImage);
 
   return(
     <Container>
-      <MusicPic source={imageMusicPic} />
+      <MusicPic source={musicImage} />
       <InfoContainer>
         <Music>{musicName}</Music>
         <Artist>{artistName}</Artist>

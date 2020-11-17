@@ -52,7 +52,6 @@ const SoundManagement: React.FC = () => {
     }
   }
 
-
   async function pauseSound() {
     setIsPlay(false);
     try {
