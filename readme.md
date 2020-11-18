@@ -10,9 +10,11 @@
 
 <h3>Demonstrações</h3>
 
-<img width='250' height='450' src='https://user-images.githubusercontent.com/60564538/99598495-5f17c480-29d8-11eb-941b-4fc6ee95fe7f.jpeg' />
-<img width='250' height='450' src='https://user-images.githubusercontent.com/60564538/99598486-5d4e0100-29d8-11eb-9c8f-9f9b5961a776.jpeg' />
-<img width='250' height='450' src='https://user-images.githubusercontent.com/60564538/99598489-5e7f2e00-29d8-11eb-8076-ece663081e75.jpeg' />
+<div align='center'>
+  <img width='250' height='450' src='https://user-images.githubusercontent.com/60564538/99598495-5f17c480-29d8-11eb-941b-4fc6ee95fe7f.jpeg' />
+  <img width='250' height='450' src='https://user-images.githubusercontent.com/60564538/99598489-5e7f2e00-29d8-11eb-8076-ece663081e75.jpeg' />
+  <img width='250' height='450' src='https://user-images.githubusercontent.com/60564538/99598486-5d4e0100-29d8-11eb-9c8f-9f9b5961a776.jpeg' />
+</div>
 
 <h3>Tecnologias usadas:</h3>
 
