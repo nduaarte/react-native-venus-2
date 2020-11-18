@@ -14,7 +14,7 @@ const Sounds: React.FC = () => {
 
       <FlatList
         data={data}
-        keyExtractor={item => item.id}
+        //keyExtractor={item => item.id}
         renderItem={({ item }) => (
           <Track
             id={item.id}

@@ -17,7 +17,7 @@ export const InfoContainer = styled.View`
 `;
 
 export const Music = styled.Text`
-  color: ${({ theme }) => theme.white};
+  color: ${({ theme }) => theme.main};
   font-size: 18px;
   font-weight: 600;
 `;

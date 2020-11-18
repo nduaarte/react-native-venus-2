@@ -9,7 +9,7 @@ export const Container = styled.View`
   padding: 20px 0;
 `;
 
-export const Button = styled(Pressable)`
+export const Button = styled.TouchableOpacity`
   background-color: ${({ theme }) =>  theme.grey};
 
   padding: 15px 25px;

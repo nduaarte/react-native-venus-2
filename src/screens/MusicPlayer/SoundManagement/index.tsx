@@ -4,32 +4,42 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { ThemeContext } from 'styled-components';
 
-import {  RootState } from '../../../redux/reducers/MusicReducer';
+import data from '../../../data';
+import { RootState } from '../../../redux/reducers/MusicReducer';
 import { Container, Button } from './styles';
-
 
 const SoundManagement: React.FC = () => {
   const { main, lighter } = useContext(ThemeContext);
   const [isPlay, setIsPlay] = useState(false);
-  const currentSound = useRef(new Audio.Sound());
   const dispatch = useDispatch();
-
   const musicLink = useSelector((state: RootState) => state.MusicReducer.musicLink);
+  const currentSound = useRef(new Audio.Sound());
 
+  const [state, setState] = useState(true);
   useEffect(() => {
     loadSound();
 
     const interval = setInterval(() => {
       dispatchCurrentTime();
       return () => clearInterval(interval);
-    }, 100)
+    }, 1000)
   }, []);
+
+  const mountedRef = useRef(false);
+  useEffect(() => {
+    if (!mountedRef.current) {
+      mountedRef.current = true;
+      return;
+    }
+    changeSound();
+  }, [musicLink])
 
   async function loadSound() {
     try {
-      await currentSound.current.loadAsync(musicLink);
+      const sound = await currentSound.current.loadAsync(musicLink);
+      dispatch({ type: 'UPDATE_CURRENT_SOUND_OBJECT', value: sound });
     } catch (err) {
-      console.log(`Erro ao carregar a música \n ${err}`);
+      console.log('Erro ao carregar a música');
     }
   }
 
@@ -42,6 +52,18 @@ const SoundManagement: React.FC = () => {
       console.log('Erro ao buscar informações da música');
     }
   }
+
+  async function changeSound() {
+    setState(false);
+    try {
+      await currentSound.current.unloadAsync();
+      await loadSound();
+      await playSound();
+    } catch (err) {
+      console.log('Erro ao descarregar a faixa atual')
+    }
+  }
+
 
   async function playSound() {
     setIsPlay(true);
@@ -61,6 +83,18 @@ const SoundManagement: React.FC = () => {
     }
   }
 
+  let count = 0;
+  function next() {
+    count++;
+    const currentTrack = data[count];
+
+    dispatch({ type: 'UPDATE_MUSIC_ID', value: currentTrack.id });
+    dispatch({ type: 'UPDATE_MUSIC_LINK', value: currentTrack.sound });
+    dispatch({ type: 'UPDATE_MUSIC_IMAGE', value: currentTrack.image });
+    dispatch({ type: 'UPDATE_MUSIC_NAME', value: currentTrack.music });
+    dispatch({ type: 'UPDATE_ARTIST_NAME', value: currentTrack.artist });
+  }
+
   return (
     <Container>
       <Button>
@@ -74,7 +108,7 @@ const SoundManagement: React.FC = () => {
         }
       </Button>
 
-      <Button>
+      <Button onPress={() => next()} activeOpacity={0.5}>
         <FontAwesome5 name="step-forward" size={20} color={lighter} />
       </Button>
     </Container>

@@ -25,6 +25,6 @@ export const Music = styled.Text`
 
 export const Artist= styled.Text`
   color: ${({ theme }) => theme.darkWhite};
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 200;
 `;

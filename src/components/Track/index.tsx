@@ -1,7 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { ThemeContext } from 'styled-components';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import data from '../../data/index';
 
@@ -15,21 +15,21 @@ import {
 } from './styles';
 
 interface propsTypes {
-  id: string,
+  id: number,
   image: string,
   music: string,
   artist: string,
 }
 
 function Track({ id, image, music, artist}: propsTypes) {
-  const { main, lighter } = useContext(ThemeContext);
+  const { main, lighter, white, darkWhite } = useContext(ThemeContext);
   const [hasSelect, setHasSelect] = useState(false);
   const dispatch = useDispatch();
 
-  let stringConvert = parseInt(id);
-  const currentTrack = data[stringConvert -1];
-
+  const currentTrack = data[id-1];
   function dispatchNewCurrentTrack() {
+    setHasSelect(true);
+    dispatch({ type: 'UPDATE_MUSIC_ID', value: currentTrack.id });
     dispatch({ type: 'UPDATE_MUSIC_LINK', value: currentTrack.sound });
     dispatch({ type: 'UPDATE_MUSIC_IMAGE', value: currentTrack.image });
     dispatch({ type: 'UPDATE_MUSIC_NAME', value: currentTrack.music });
@@ -45,7 +45,7 @@ function Track({ id, image, music, artist}: propsTypes) {
         <Artist>{artist}</Artist>
       </InfoContainer>
 
-      <AddSound onPress={() => setHasSelect(true)}>
+      <AddSound>
         <MaterialCommunityIcons name="library-plus" size={28} color={hasSelect ? main : lighter} />
       </AddSound>
     </Container>
